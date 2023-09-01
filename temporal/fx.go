@@ -222,7 +222,7 @@ func ServerOptionsProvider(opts []ServerOption) (serverOptionsProvider, error) {
 	// EsConfig / EsClient
 	var esConfig *esclient.Config
 	var esClient esclient.Client
-	logger.Warn("jing yi test 456")
+	// logger.Warn("jing yi test 456")
 	if so.config.Persistence.AdvancedVisibilityConfigExist() {
 		// 	Version                      string                    `yaml:"version"`
 		// URL                          url.URL                   `yaml:"url"`
