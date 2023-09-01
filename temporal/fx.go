@@ -182,8 +182,6 @@ func ServerOptionsProvider(opts []ServerOption) (serverOptionsProvider, error) {
 		logger = log.NewZapLogger(log.BuildZapLogger(so.config.Log))
 	}
 
-	logger.Error("hello!!!!!!!!!! running custom temporal server")
-
 	// ClientFactoryProvider
 	clientFactoryProvider := so.clientFactoryProvider
 	if clientFactoryProvider == nil {
@@ -226,6 +224,18 @@ func ServerOptionsProvider(opts []ServerOption) (serverOptionsProvider, error) {
 	var esClient esclient.Client
 	logger.Warn("jing yi test 456")
 	if so.config.Persistence.AdvancedVisibilityConfigExist() {
+		// 	Version                      string                    `yaml:"version"`
+		// URL                          url.URL                   `yaml:"url"`
+		// Username                     string                    `yaml:"username"`
+		// Password                     string                    `yaml:"password"`
+		// Indices                      map[string]string         `yaml:"indices"`
+		// LogLevel                     string                    `yaml:"logLevel"`
+		// AWSRequestSigning            ESAWSRequestSigningConfig `yaml:"aws-request-signing"`
+		// CloseIdleConnectionsInterval time.Duration             `yaml:"closeIdleConnectionsInterval"`
+		// EnableSniff                  bool                      `yaml:"enableSniff"`
+		// EnableHealthcheck
+
+		logger.Error(fmt.Sprintf("esConfig: %s, %s, %v", esConfig.Version, esConfig.Username, esConfig.AWSRequestSigning))
 		logger.Warn("jing yi test 123")
 		advancedVisibilityStore, ok := so.config.Persistence.DataStores[so.config.Persistence.AdvancedVisibilityStore]
 		if !ok {
