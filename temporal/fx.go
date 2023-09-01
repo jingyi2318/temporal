@@ -237,6 +237,8 @@ func ServerOptionsProvider(opts []ServerOption) (serverOptionsProvider, error) {
 
 		logger.Error(fmt.Sprintf("esConfig: %s, %s, %v", esConfig.Version, esConfig.Username, esConfig.AWSRequestSigning))
 		logger.Warn("jing yi test 123")
+		logger.Warn("jing yi test 789")
+
 		advancedVisibilityStore, ok := so.config.Persistence.DataStores[so.config.Persistence.AdvancedVisibilityStore]
 		if !ok {
 			return serverOptionsProvider{}, fmt.Errorf("persistence config: advanced visibility datastore %q: missing config", so.config.Persistence.AdvancedVisibilityStore)
