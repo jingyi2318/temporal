@@ -182,6 +182,8 @@ func ServerOptionsProvider(opts []ServerOption) (serverOptionsProvider, error) {
 		logger = log.NewZapLogger(log.BuildZapLogger(so.config.Log))
 	}
 
+	logger.Error("hello!!!!!!!!!! running custom temporal server")
+
 	// ClientFactoryProvider
 	clientFactoryProvider := so.clientFactoryProvider
 	if clientFactoryProvider == nil {
@@ -222,7 +224,9 @@ func ServerOptionsProvider(opts []ServerOption) (serverOptionsProvider, error) {
 	// EsConfig / EsClient
 	var esConfig *esclient.Config
 	var esClient esclient.Client
+	logger.Warn("jing yi test 456")
 	if so.config.Persistence.AdvancedVisibilityConfigExist() {
+		logger.Warn("jing yi test 123")
 		advancedVisibilityStore, ok := so.config.Persistence.DataStores[so.config.Persistence.AdvancedVisibilityStore]
 		if !ok {
 			return serverOptionsProvider{}, fmt.Errorf("persistence config: advanced visibility datastore %q: missing config", so.config.Persistence.AdvancedVisibilityStore)
