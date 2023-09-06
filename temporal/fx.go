@@ -237,13 +237,13 @@ func ServerOptionsProvider(opts []ServerOption) (serverOptionsProvider, error) {
 
 		if esClient != nil {
 			logger.Error(fmt.Sprintf("esConfig: %s, %s, %v", esConfig.Version, esConfig.Username))
-			if esClient.AWSRequestSigning != nil {
-				logger.Error(fmt.Sprintf("esConfig: %v", esConfig.Version, esConfig.Username, esConfig.AWSRequestSigning))
-			} else {
-				logger.Error("esCofig.AWSRequestSigning is nil")
-			}
+			// if esClient.AWSRequestSigning != nil {
+			// 	logger.Error(fmt.Sprintf("esConfig: %v", esConfig.Version, esConfig.Username, esConfig.AWSRequestSigning))
+			// } else {
+			// 	logger.Error("esCofig.AWSRequestSigning is nil")
+			// }
 		} else {
-			logger.Error("esCofig is nil")
+			logger.Error("esConfig is nil")
 		}
 
 		logger.Warn("jing yi test 123")
