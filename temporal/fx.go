@@ -235,16 +235,16 @@ func ServerOptionsProvider(opts []ServerOption) (serverOptionsProvider, error) {
 		// EnableSniff                  bool                      `yaml:"enableSniff"`
 		// EnableHealthcheck
 
-		if esClient != nil {
-			logger.Error(fmt.Sprintf("esConfig: %s, %s, %v", esConfig.Version, esConfig.Username))
-			// if esClient.AWSRequestSigning != nil {
-			// 	logger.Error(fmt.Sprintf("esConfig: %v", esConfig.Version, esConfig.Username, esConfig.AWSRequestSigning))
-			// } else {
-			// 	logger.Error("esCofig.AWSRequestSigning is nil")
-			// }
-		} else {
-			logger.Error("esConfig is nil")
-		}
+		// if esClient != nil {
+		// 	// logger.Error(fmt.Sprintf("esConfig: %s, %s, %v", esConfig.Version, esConfig.Username))
+		// 	// if esClient.AWSRequestSigning != nil {
+		// 	// 	logger.Error(fmt.Sprintf("esConfig: %v", esConfig.Version, esConfig.Username, esConfig.AWSRequestSigning))
+		// 	// } else {
+		// 	// 	logger.Error("esCofig.AWSRequestSigning is nil")
+		// 	// }
+		// } else {
+		// 	logger.Error("esConfig is nil")
+		// }
 
 		logger.Warn("jing yi test 123")
 		logger.Warn("jing yi test 789")
